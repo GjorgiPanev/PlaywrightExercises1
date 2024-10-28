@@ -1,0 +1,9 @@
+{
+    "computertitle": "banner",
+    "computername": "Computer name",
+    "cintro": "Introduced",
+    "cdisco": "Discontinued",
+    "company": "Company",
+    "seachfield": "Filter by computer name...",
+    "searchresults": "table tbody tr"
+}
