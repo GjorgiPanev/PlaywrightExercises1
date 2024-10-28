@@ -1,0 +1,20 @@
+[
+    {
+        "computername": "HP2025",
+        "introduced": "2024-09-09",
+        "discountinued": "2024-10-10",
+        "company": "5"
+    },
+    {
+        "computername": "HP2023",
+        "introduced": "2023-09-09",
+        "discountinued": "2023-10-10",
+        "company": "6"
+    },
+    {
+        "computername": "HP2022",
+        "introduced": "2022-09-09",
+        "discountinued": "2022-10-10",
+        "company": "7"
+    }
+]
