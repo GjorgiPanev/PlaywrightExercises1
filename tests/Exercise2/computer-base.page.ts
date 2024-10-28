@@ -1,6 +1,6 @@
 import { expect, type Locator, type Page } from '@playwright/test';
 //import * as fs from 'fs';
-//const locators = JSON.parse(fs.readFileSync('../Playwrightexercises1/tests/fixtures/data/locators.json',"utf-8"));
+//const locators = JSON.parse(fs.readFileSync('../PlaywrightExercises1/tests/fixtures/homework3/textbox-locators.json', 'utf-8'));
 
 export class Computer{
     readonly computerPage: Page;
