@@ -11,10 +11,11 @@ export class Computer{
     readonly discountinued: Locator;
     readonly companyName: Locator;
     readonly createComputerButton: Locator;
-    readonly verifyComputer: Locator;
+    public readonly verifyComputer: Locator;
     readonly seacrhField: Locator;
     readonly searchButton: Locator;
     readonly searchResult: Locator;
+    public readonly verifyComputers: Locator;
 
     constructor(page : Page){
         this.computerPage = page;
@@ -29,6 +30,7 @@ export class Computer{
         this.seacrhField = page.getByPlaceholder('Filter by computer name...');
         this.searchButton = page.getByRole('button', { name: 'Filter by name' });
         this.searchResult = page.locator('table tbody tr');
+        this.verifyComputers = page.locator('[class="alert-message warning"]');
     }
 
     async goto(){
@@ -63,10 +65,6 @@ export class Computer{
         await this.createComputerButton.click();
     }
 
-    async VerifyTheComputer(compname){
-        await expect(this.verifyComputer).toHaveText('Done ! Computer '+ compname +' has been created');
-    }
-
     async CreateComputer2(name2, date3, date4, option2){
         await this.addNewComputerButton.click();
         await this.computerName.fill(name2);
@@ -85,6 +83,6 @@ export class Computer{
     }
     
     async SearchResults(){
-        await this.searchResult.count();
+        return await this.searchResult.count();
     }
 }

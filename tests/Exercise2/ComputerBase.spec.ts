@@ -21,7 +21,7 @@ test.describe('Test Suite for the second Exercise', () => {
     test('Add New computer and Verify that the computer is added', async ({ page }) => {
         const computerPage = new Computer(page);
         await computerPage.CreateComputer2(data2.computername, data2.introduced, data2.discountinued, data2.company);
-        await expect(page.locator('#main')).toContainText('Done ! Computer '+ data2.computername +' has been created');
+        await expect(computerPage.verifyComputer).toContainText('Done ! Computer '+ data2.computername +' has been created');
     });
 
     test('Verify the number is Equal', async ({ page }) => {
@@ -29,13 +29,13 @@ test.describe('Test Suite for the second Exercise', () => {
         await computerPage.SearchFill(data3.searchfield);
         await computerPage.SearchButton();
       
-        const totalComputer = await page.locator('table tbody tr').count();
+        const totalComputer = await computerPage.SearchResults();
         await expect(page.getByText(totalComputer + ' computers found')).toHaveText(totalComputer + ' computers found');
     });
 
     data.forEach((user) => {
 
-        test(`test1 ${user.computername} ${user.introduced} ${user.discountinued} ${user.company}`, async ({ page }) => {
+        test(`test ${user.computername} ${user.introduced} ${user.discountinued} ${user.company}`, async ({ page }) => {
             const computerPage = new Computer(page);
             await computerPage.AddNewComputer();
             await computerPage.FillComputerField(user.computername);
@@ -43,7 +43,7 @@ test.describe('Test Suite for the second Exercise', () => {
             await computerPage.DiscontinuedField(user.discountinued);
             await computerPage.SelectCompany(user.company);
             await computerPage.CreateComputer();
-            await expect(page.locator('[class="alert-message warning"]')).toContainText('Done ! Computer '+ user.computername +' has been created');
+            await expect(computerPage.verifyComputers).toContainText('Done ! Computer '+ user.computername +' has been created');
         });
     });
 });
