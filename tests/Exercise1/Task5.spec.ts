@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 import * as fs from 'fs';
-const data = JSON.parse(fs.readFileSync('../Playwrightexercises1/tests/fixtures/data/addcomputer.json',"utf-8"));
+const data = JSON.parse(fs.readFileSync('../PlaywrightExercises1/tests/fixtures/data/addcomputer.json',"utf-8"));
 
 test.describe('Test Suite for the first Exercise', () => {
 
